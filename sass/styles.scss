@@ -1,0 +1,106 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$heading: 'Big Shoulders Display', sans-serif;
+$text: 'Lexend Deca', sans-serif;
+
+// Primary Color palette
+$brightOrange: hsl(31, 77%, 52%);
+$darkCyan: hsl(184, 100%, 22%);
+$veryDarkCyan: hsl(179, 100%, 13%);
+
+$pColor: hsla(0, 0%, 100%, 0.75); // Paragraph Color
+$veryLightGray: hsl(0, 0%, 95%); // For backgrounds headings and buttons
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  background-color: $veryLightGray;
+}
+
+.wrapper {
+  /* width: min-content; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+img {
+  display: block;
+}
+
+.wrapper >  div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: 20px;
+    
+  width: 375px;
+  height: auto;
+  align-self: stretch;
+  padding: 50px;
+  color: $pColor;
+  font-family: $text;
+  
+  & h2 {
+    font-family: $heading; 
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 20px 0;
+    color: $veryLightGray;
+  }
+  
+  & .text {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: center;
+    font-size: 12px;
+  }
+  
+  &:first-child{
+    & button { color: $brightOrange; }
+    background: $brightOrange;
+  }
+  &:nth-child(2) {
+    & button { color: $darkCyan; }
+    background: $darkCyan;
+  }
+  &:last-child {
+    & button { color: $veryDarkCyan; }
+    background: $veryDarkCyan;
+  }
+  
+  & button {
+    width: 200px;
+    height: max-content;
+    padding: 15px;
+    margin-top: 15%;
+    border: none;
+    outline: none;
+    font-family: $text;
+    border-radius: 50px;
+    /* border: 1px solid black; */
+    background: $veryLightGray;
+    
+    &:hover {
+      color: $veryLightGray;
+      border: 2px solid $veryLightGray;
+      background: transparent;
+    }
+  }
+}
