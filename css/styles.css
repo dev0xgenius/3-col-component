@@ -18,16 +18,21 @@ body {
 }
 
 .wrapper {
-  /* width: min-content; */
+  width: max-content;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
-img {
+@media (max-width: 600px) {
+  .wrapper {
+    display: block;
+  }
+}
+img, div > a {
   display: block;
 }
 
@@ -35,60 +40,54 @@ img {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-evenly;
-  gap: 20px;
-  width: 375px;
+  max-width: 375px;
   height: auto;
   align-self: stretch;
   padding: 50px;
   color: hsla(0, 0%, 100%, 0.75);
   font-family: "Lexend Deca", sans-serif;
 }
+.wrapper > div section {
+  display: flex;
+  flex-direction: column;
+}
 .wrapper > div h2 {
   font-family: "Big Shoulders Display", sans-serif;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 2.1rem;
   margin: 20px 0;
   color: hsl(0, 0%, 95%);
-}
-.wrapper > div .text {
-  display: flex;
-  flex-direction: column;
-  align-items: space-between;
-  justify-content: center;
-  font-size: 12px;
 }
 .wrapper > div:first-child {
   background: hsl(31, 77%, 52%);
 }
-.wrapper > div:first-child button {
+.wrapper > div:first-child .link {
   color: hsl(31, 77%, 52%);
 }
 .wrapper > div:nth-child(2) {
   background: hsl(184, 100%, 22%);
 }
-.wrapper > div:nth-child(2) button {
+.wrapper > div:nth-child(2) .link {
   color: hsl(184, 100%, 22%);
 }
 .wrapper > div:last-child {
   background: hsl(179, 100%, 13%);
 }
-.wrapper > div:last-child button {
+.wrapper > div:last-child .link {
   color: hsl(179, 100%, 13%);
 }
-.wrapper > div button {
+.wrapper > div .link {
   width: 200px;
   height: max-content;
   padding: 15px;
   margin-top: 15%;
-  border: none;
-  outline: none;
+  text-decoration: none;
+  text-align: center;
   font-family: "Lexend Deca", sans-serif;
   border-radius: 50px;
-  /* border: 1px solid black; */
   background: hsl(0, 0%, 95%);
 }
-.wrapper > div button:hover {
+.wrapper > div .link:hover {
   color: hsl(0, 0%, 95%);
   border: 2px solid hsl(0, 0%, 95%);
   background: transparent;

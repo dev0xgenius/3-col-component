@@ -29,72 +29,70 @@ body {
 }
 
 .wrapper {
-  /* width: min-content; */
+  width: max-content;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
-img {
+@media (max-width: 600px) {
+  .wrapper { display: block; }
+}
+
+img, div > a{
   display: block;
 }
 
-.wrapper >  div {
+.wrapper >  div{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-evenly;
-  gap: 20px;
-    
-  width: 375px;
+  
+  max-width: 375px;
   height: auto;
   align-self: stretch;
   padding: 50px;
   color: $pColor;
   font-family: $text;
   
+  & section {
+    display: flex;
+    flex-direction: column;
+  }
+  
   & h2 {
     font-family: $heading; 
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 2.1rem;
     margin: 20px 0;
     color: $veryLightGray;
   }
   
-  & .text {
-    display: flex;
-    flex-direction: column;
-    align-items: space-between;
-    justify-content: center;
-    font-size: 12px;
-  }
-  
   &:first-child{
-    & button { color: $brightOrange; }
+    & .link { color: $brightOrange; }
     background: $brightOrange;
   }
   &:nth-child(2) {
-    & button { color: $darkCyan; }
+    & .link { color: $darkCyan; }
     background: $darkCyan;
   }
   &:last-child {
-    & button { color: $veryDarkCyan; }
+    & .link { color: $veryDarkCyan; }
     background: $veryDarkCyan;
   }
   
-  & button {
+  & .link {
     width: 200px;
     height: max-content;
     padding: 15px;
     margin-top: 15%;
-    border: none;
-    outline: none;
+    text-decoration: none;
+    text-align: center;
     font-family: $text;
     border-radius: 50px;
-    /* border: 1px solid black; */
     background: $veryLightGray;
     
     &:hover {
